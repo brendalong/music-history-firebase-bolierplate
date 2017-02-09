@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "browserify": "^13.1.1",
+    "firebase": "^3.6.9",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-handlebars": "^1.0.0",
