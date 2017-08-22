@@ -10,7 +10,13 @@ let $ = require('jquery'),
 // ****************************************
 
 function getSongs(user) {
-
+    return new Promise((resolve,reject)=>{
+        $.ajax({
+            url: `${firebase.getFBsettings().databaseURL}/songs.json`
+        }).done((songData)=> {
+            resolve(songData);
+        });
+    });
 }
 
 function addSong(songFormObj) {

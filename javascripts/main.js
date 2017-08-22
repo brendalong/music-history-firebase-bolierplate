@@ -9,6 +9,11 @@ let $ = require('jquery'),
 // Using the REST API
 function loadSongsToDOM() {
   console.log("Need to load some songs, Buddy");
+  db.getSongs()
+  .then((songData) => {
+    console.log("got data:", songData);
+    templates.makeSongList(songData);
+  });
 }
 
 loadSongsToDOM(); //<--Move to auth section after adding login btn
