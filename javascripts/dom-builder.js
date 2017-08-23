@@ -29,6 +29,11 @@ function makeSongList(songList) {
   }
 }
 
+
+
+function songForm(song, songId) {
+  return new Promise((resolve, reject) => {
+
 function songForm(song, songId) {
   return new Promise(function (resolve, reject) {
     let songItem = {
@@ -38,7 +43,11 @@ function songForm(song, songId) {
       album: song ? song.album : "",
       formTitle: song ? `Edit "${song.title}"` : "Add a new song",
       btnText: song ? "save changes" : "save song",
+
+      btnId: song ? "save_edit_btn" : "save_new_btn"  // identify which action to take
+
       btnId: song ? "save_edit_btn" : "save_new_btn"
+
     },
     form =
       `<h3>${songItem.formTitle}</h3>
