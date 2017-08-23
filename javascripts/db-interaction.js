@@ -21,10 +21,24 @@ function getSongs(user) {
 
 function addSong(songFormObj) {
 
+    console.log("adding song", songFormObj);
+    return new Promise((resolve,reject)=>{
+        $.ajax({
+            url: `${firebase.getFBsettings().databaseURL}/songs.json`,
+            type: 'POST',
+            data: JSON.stringify(songFormObj),
+            dataType: 'json'
+        }).done(songId => resolve(songId));
+    });
 }
-// POST - Submits data to be processed to a specified resource. Takes one parameter.
 
 function deleteSong(songId) {
+    return new Promise((resolve, reject)=>{
+        $.ajax({
+            url: `${firebase.getFBsettings().databaseURL}/songs/${songId}.json`,
+            method: "DELETE"
+        }).done(()=>resolve());
+    });
 
 }
 
