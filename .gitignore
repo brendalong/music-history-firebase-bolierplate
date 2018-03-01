@@ -3,3 +3,5 @@ lib/.sass-cache
 dist/
 css/
 lib/node_modules
+lib/package-lock.json
+javascripts/fb-key.js
